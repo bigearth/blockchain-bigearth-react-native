@@ -47,6 +47,9 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  base: {
+    backgroundColor: 'red'
+  }
 });
 
 AppRegistry.registerComponent('blockchain', () => blockchain);
