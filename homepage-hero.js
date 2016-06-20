@@ -4,6 +4,7 @@ import {
   View,
   StyleSheet
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class HomepageHero extends Component {
   constructor(props) {
@@ -41,16 +42,16 @@ class HomepageHero extends Component {
   }
 	render() {    
     return (
-    	<View style={styles.header}>
-      	<Text style={[styles.headerBase, styles.headerTitle]}>Bitcoin <Text style={styles.headerSubtitle}>Markets</Text></Text>
+    	<View style={[styles.header]}>
+      	<Text style={[styles.headerBase, styles.headerTitle]}><Icon name="btc" /> Bitcoin <Text style={styles.headerSubtitle}>Markets</Text></Text>
         <Text style={[styles.headerBase]}>Market Value: ${this.state.value} per coin</Text>
         <Text style={[styles.headerBase]}>{this.state.current} / {this.state.all}  coins mined</Text>
         <Text style={[styles.headerBase]}>%{this.state.perc} of total coins</Text>
         <Text style={[styles.headerBase]}>Market Cap ${this.state.market_cap}</Text>
-        <Text style={[styles.headerBase, styles.headerTitle]}>Bitcoin <Text style={styles.headerSubtitle}>Difficulty</Text></Text>
+        <Text style={[styles.headerBase, styles.headerTitle]}><Icon name="link" /> Bitcoin <Text style={styles.headerSubtitle}>Difficulty</Text></Text>
         <Text style={[styles.headerBase]}>{this.state.difficulty}</Text>
         <Text style={[styles.headerBase]}>Difficulty is a measure of how difficult it is to find a new block below a given target.</Text>
-        <Text style={[styles.headerBase, styles.headerTitle]}>Next <Text style={styles.headerSubtitle}>Difficulty</Text> (estimate)</Text>
+        <Text style={[styles.headerBase, styles.headerTitle]}><Icon name="bar-chart" /> Next <Text style={styles.headerSubtitle}>Difficulty</Text> (estimate)</Text>
         <Text style={[styles.headerBase]}>{this.state.next_difficulty}</Text>
         <Text style={[styles.headerBase]}>{this.state.next_difficulty_perc} change to current</Text> 
         <Text style={[styles.headerBase]}>{this.state.retarget_in} blocks until difficulty changes</Text>
