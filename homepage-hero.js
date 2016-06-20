@@ -43,17 +43,17 @@ class HomepageHero extends Component {
 	render() {    
     return (
     	<View style={[styles.header]}>
-      	<Text style={[styles.headerBase, styles.headerTitle]}><Icon name="btc" /> Bitcoin <Text style={styles.headerSubtitle}>Markets</Text></Text>
+      	<Text style={[styles.headerBase, styles.headerTitle]}><Icon name="btc" size={20} /> Bitcoin <Text style={styles.headerSubtitle}>Markets</Text></Text>
         <Text style={[styles.headerBase]}>Market Value: ${this.state.value} per coin</Text>
         <Text style={[styles.headerBase]}>{this.state.current} / {this.state.all}  coins mined</Text>
-        <Text style={[styles.headerBase]}>%{this.state.perc} of total coins</Text>
+        <Text style={[styles.headerBase]}>{this.state.perc}% of total coins</Text>
         <Text style={[styles.headerBase]}>Market Cap ${this.state.market_cap}</Text>
-        <Text style={[styles.headerBase, styles.headerTitle]}><Icon name="link" /> Bitcoin <Text style={styles.headerSubtitle}>Difficulty</Text></Text>
+        <Text style={[styles.headerBase, styles.headerTitle]}><Icon name="link" size={20} /> Bitcoin <Text style={styles.headerSubtitle}>Difficulty</Text></Text>
         <Text style={[styles.headerBase]}>{this.state.difficulty}</Text>
         <Text style={[styles.headerBase]}>Difficulty is a measure of how difficult it is to find a new block below a given target.</Text>
-        <Text style={[styles.headerBase, styles.headerTitle]}><Icon name="signal" /> Next <Text style={styles.headerSubtitle}>Difficulty</Text> (estimate)</Text>
+        <Text style={[styles.headerBase, styles.headerTitle]}><Icon name="signal" size={20} /> Next <Text style={styles.headerSubtitle}>Difficulty</Text> (estimate)</Text>
         <Text style={[styles.headerBase]}>{this.state.next_difficulty}</Text>
-        <Text style={[styles.headerBase]}>{this.state.next_difficulty_perc} change to current</Text> 
+        <Text style={[styles.headerBase]}>+<Text style={[styles.next_difficulty_perc]}>{this.state.next_difficulty_perc}</Text> change to current</Text> 
         <Text style={[styles.headerBase]}>{this.state.retarget_in} blocks until difficulty changes</Text>
       </View>
     )
@@ -67,13 +67,20 @@ const styles = StyleSheet.create({
   },
   headerBase: {
     color: '#fff',
-    paddingTop: 10
+    paddingTop: 10,
+    fontWeight: '200',
+    fontSize: 12
   },
   headerTitle: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontSize: 20
   },
   headerSubtitle: {
     color: '#03233b'
+  },
+  next_difficulty_perc: {
+    backgroundColor: 'green',
+    color: 'white'
   }
 });
 

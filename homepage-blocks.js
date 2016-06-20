@@ -34,13 +34,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   sub: {
-    backgroundColor: '#579dd8'
+    backgroundColor: '#579dd8',
+    padding: 20
   },
   subBase: {
-    color: '#fff'
+    color: '#fff',
+    fontSize: 17
   },
   subBaseSubtitle: {
-    color: '#0F5288'
+    color: '#0F5288',
+    fontWeight: 'bold'
   }
 });
 
