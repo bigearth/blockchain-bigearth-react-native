@@ -6,6 +6,9 @@ import {
 import HomepageBlock from './homepage-block.js';
 
 class HomepageBlocks extends Component {
+  constructor(props) {
+    super(props);
+  }
 	render() {    
     return (
     	<View>
