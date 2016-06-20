@@ -15,7 +15,7 @@ class HomepageBlock extends Component {
     fetch('https://stageblockchain.bigearth.io/blocks/416614,416613,416612,416611,416610,416609,416608,416607,416606,416605,416604,416603,416602,416601,416600,416599,416598,416597,416596,416595.json')
     .then((response) => response.text())
     .then((responseText) => {
-      var data = JSON.parse(responseText);
+      let data = JSON.parse(responseText);
       this.setState({
         dataSource: this.state.dataSource.cloneWithRows(data.data)
       });
@@ -29,7 +29,16 @@ class HomepageBlock extends Component {
     	<View>
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={(rowData) => <Text>{rowData.nb}</Text>}
+          renderRow={(rowData) => 
+            <View>
+              <Text>{rowData.nb}</Text>
+              <Text>{rowData.time_utc}</Text>
+              <Text>{rowData.nb_txs}</Text>
+              <Text>{rowData.fee}</Text>
+              <Text>{rowData.size}</Text>
+              <Text>{rowData.days_destroyed}</Text>
+            </View>
+          }
         />
       </View>
     )
