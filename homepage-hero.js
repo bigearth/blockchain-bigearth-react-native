@@ -51,7 +51,7 @@ class HomepageHero extends Component {
         <Text style={[styles.headerBase, styles.headerTitle]}><Icon name="link" /> Bitcoin <Text style={styles.headerSubtitle}>Difficulty</Text></Text>
         <Text style={[styles.headerBase]}>{this.state.difficulty}</Text>
         <Text style={[styles.headerBase]}>Difficulty is a measure of how difficult it is to find a new block below a given target.</Text>
-        <Text style={[styles.headerBase, styles.headerTitle]}><Icon name="bar-chart" /> Next <Text style={styles.headerSubtitle}>Difficulty</Text> (estimate)</Text>
+        <Text style={[styles.headerBase, styles.headerTitle]}><Icon name="signal" /> Next <Text style={styles.headerSubtitle}>Difficulty</Text> (estimate)</Text>
         <Text style={[styles.headerBase]}>{this.state.next_difficulty}</Text>
         <Text style={[styles.headerBase]}>{this.state.next_difficulty_perc} change to current</Text> 
         <Text style={[styles.headerBase]}>{this.state.retarget_in} blocks until difficulty changes</Text>
@@ -62,10 +62,12 @@ class HomepageHero extends Component {
 
 const styles = StyleSheet.create({
   header: {
-    backgroundColor: '#0F5288'
+    backgroundColor: '#0F5288',
+    padding: 20
   },
   headerBase: {
-    color: '#fff'
+    color: '#fff',
+    paddingTop: 10
   },
   headerTitle: {
     fontWeight: 'bold'

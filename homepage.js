@@ -22,7 +22,7 @@ class Homepage extends Component {
   }
 	render() {    
     return (
-    	<View>
+    	<View style={[styles.container]}>
         <HomepageHero style={styles.hero} />
         <HomepageBlocks style={styles.sub} url="https://stageblockchain.bigearth.io/blocks/416614,416613,416612,416611,416610,416609,416608,416607,416606,416605,416604,416603,416602,416601,416600,416599,416598,416597,416596,416595.json" />
         <TouchableHighlight onPress={ () => this._navigate('asdf') }>
@@ -35,10 +35,8 @@ class Homepage extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    flexDirection: 'column',
+    backgroundColor: '#0F5288'
   },
   hero: {
     backgroundColor: '#0F5288'

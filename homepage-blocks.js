@@ -14,14 +14,15 @@ class HomepageBlocks extends Component {
 	render() {    
     return (
     	<View style={[styles.sub]}>
-        <Icon style={[styles.subBase]} name="btc" />
-      	<Text style={[styles.subBase]}>Last 20 <Text style={[styles.subBaseSubtitle]}>Bitcoin</Text> Blocks</Text>
-      	<Text>Height</Text>
-      	<Text>Created</Text>
-      	<Text>Transactions</Text>
-      	<Text>Fee</Text>
-      	<Text>Size</Text>
-      	<Text>Days Destroyed</Text>
+      	<Text style={[styles.subBase]}><Icon style={[styles.subBase]} name="th" /> Last 20 <Text style={[styles.subBaseSubtitle]}>Bitcoin</Text> Blocks</Text>
+    	  <View style={[styles.container]}>
+        	<Text>Height</Text>
+        	<Text>Created</Text>
+        	<Text>Transactions</Text>
+        	<Text>Fee</Text>
+        	<Text>Size</Text>
+        	<Text>Days Destroyed</Text>
+        </View>
         <HomepageBlock />
       </View>
     )
@@ -29,6 +30,9 @@ class HomepageBlocks extends Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row'
+  },
   sub: {
     backgroundColor: '#579dd8'
   },
