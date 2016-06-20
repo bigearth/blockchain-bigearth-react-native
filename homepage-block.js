@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
   Text,
-  View
+  View,
+  TouchableHighlight
 } from 'react-native';
 
 class HomepageBlock extends Component {

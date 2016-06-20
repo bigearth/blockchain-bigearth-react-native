@@ -13,11 +13,15 @@ import {
   View
 } from 'react-native';
 import Homepage from './homepage.js';
+import Blocks from './blocks.js';
 
 class blockchain extends Component {
   renderScene(route, navigator) {
     if(route.name == 'Home') {
-      return <Homepage navigator={navigator} {...route.passProps}  />
+      return <Homepage navigator={navigator} {...route.passProps} />
+    }
+    if(route.name == 'Blocks') {
+      return <Blocks navigator={navigator} {...route.passProps} />
     }
   }
   render() {
