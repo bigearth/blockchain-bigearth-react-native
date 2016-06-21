@@ -5,6 +5,7 @@ import {
   StyleSheet
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Numeral from 'numeral'
 
 class HomepageHero extends Component {
   constructor(props) {
@@ -27,10 +28,10 @@ class HomepageHero extends Component {
         data: data.data,
         value: data.data.markets.coinbase.value,
         all: data.data.volume.all,
-        current: data.data.volume.current,
+        current: numeral(data.data.volume.current).format('0.0a'),
         perc: data.data.volume.perc,
-        market_cap: data.data.markets.coinbase.value * data.data.volume.current,
-        difficulty: data.data.last_block.difficulty,
+        market_cap: numeral(data.data.markets.coinbase.value * data.data.volume.current).format('($ 0.00 a)'),
+        difficulty: numeral(data.data.last_block.difficulty).format('0.0a'),
         next_difficulty: data.data.next_difficulty.difficulty,
         next_difficulty_perc: data.data.next_difficulty.perc,
         retarget_in: data.data.next_difficulty.retarget_in
@@ -43,20 +44,31 @@ class HomepageHero extends Component {
 	render() {    
     return (
     	<View style={[styles.header]}>
-    	  <View style={[styles.header, styles.panel, styles.priceContainer]}>
+    	  <View style={[styles.header, styles.panel, styles.pricePanel]}>
           <Text style={[styles.headerBase, styles.headerTitle]}><Icon name="btc" size={20} /> Bitcoin</Text>
           <Text style={[styles.headerBase, styles.price]}>${this.state.value}</Text>
+    	    <View style={[styles.priceSubPanel]}>
+    	      <View style={[styles.priceSubPanelFirstItem]}>
+              <Text style={[styles.priceSubPanelItem]}>High ${this.state.value}</Text>
+    	      </View>
+            <Text style={[styles.priceSubPanelItem]}>${this.state.value} Low</Text>
+          </View>
         </View>
-    	  <View style={[styles.header, styles.panel]}>
-          <Text style={[styles.headerBase, styles.headerTitle]}><Icon name="link" size={20} /> Bitcoin <Text style={styles.headerSubtitle}>Difficulty</Text></Text>
-          <Text style={[styles.headerBase]}>{this.state.difficulty}</Text>
-          <Text style={[styles.headerBase]}>Difficulty is a measure of how difficult it is to find a new block below a given target.</Text>
-        </View>
-    	  <View style={[styles.header, styles.panel]}>
-          <Text style={[styles.headerBase, styles.headerTitle]}><Icon name="signal" size={20} /> Next <Text style={styles.headerSubtitle}>Difficulty</Text> (estimate)</Text>
-          <Text style={[styles.headerBase]}>{this.state.next_difficulty}</Text>
-          <Text style={[styles.headerBase]}><Text style={[styles.next_difficulty_perc]}>+{this.state.next_difficulty_perc}%</Text> change to current</Text> 
-          <Text style={[styles.headerBase]}>{this.state.retarget_in} blocks until difficulty changes</Text>
+    	  <View style={[styles.header, styles.panel, styles.pricePanel]}>
+    	    <View style={[styles.priceSubPanel]}>
+    	      <View style={[styles.priceSubPanelFirstItem]}>
+              <Text style={[styles.bold, styles.priceSubPanelItem]}>Market Cap</Text>
+              <Text style={[styles.bold, styles.priceSubPanelItem]}>Total BTC</Text>
+              <Text style={[styles.bold, styles.priceSubPanelItem]}>Hash Rate</Text>
+              <Text style={[styles.bold, styles.priceSubPanelItem]}>Next Difficulty</Text>
+    	      </View>
+    	      <View style={[]}>
+              <Text style={[styles.priceSubPanelItem]}>{this.state.market_cap}</Text>
+              <Text style={[styles.priceSubPanelItem]}>{this.state.current}</Text>
+              <Text style={[styles.priceSubPanelItem]}>{this.state.difficulty}</Text>
+              <Text style={[styles.priceSubPanelItem]}>{this.state.retarget_in}</Text>
+    	      </View>
+          </View>
         </View>
       </View>
     )
@@ -68,12 +80,26 @@ const styles = StyleSheet.create({
     backgroundColor: '#0F5288',
     padding: 5
   },
-  priceContainer: {
+  pricePanel: {
     alignItems: 'center'
   },
   price: {
     fontSize: 65,
     fontWeight: '500'
+  },
+  priceSubPanel: {
+    flexDirection: 'row'
+  },
+  priceSubPanelFirstItem: {
+    borderRightWidth: 1,
+    borderRightColor: '#000',
+    borderStyle: 'solid'
+  },
+  priceSubPanelItem: {
+    padding: 10
+  },
+  bold: {
+    fontWeight: 'bold'
   },
   headerBase: {
     paddingTop: 10,
