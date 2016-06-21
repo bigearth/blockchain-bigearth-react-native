@@ -44,8 +44,8 @@ class HomepageSub extends Component {
           style={styles.listViewContainer}
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
-            <View>
-              <View>
+            <View style={[styles.buttonContainer]}>
+              <View style={[styles.row]}>
                 <Text>{rowData.nb}</Text>
                 <Text>{rowData.time_utc}</Text>
                 <Text>{rowData.nb_txs}</Text>
@@ -76,6 +76,12 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row'
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    padding: 15,
+    backgroundColor: "#EEE",
   },
   subBase: {
     color: '#fff',
