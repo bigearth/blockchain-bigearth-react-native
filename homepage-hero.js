@@ -99,7 +99,8 @@ const styles = StyleSheet.create({
     padding: 10
   },
   bold: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    textAlign: 'right'
   },
   headerBase: {
     paddingTop: 10,
