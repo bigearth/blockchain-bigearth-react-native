@@ -12,6 +12,9 @@ class HomepageHero extends Component {
     super(props);
     this.state = {
       value: 0,
+      high: 0,
+      low: 0,
+      market_cap: 0,
       all: 21000000,
       current: 0,
       perc: 0,
@@ -27,6 +30,8 @@ class HomepageHero extends Component {
       this.setState({
         data: data.data,
         value: data.data.markets.coinbase.value,
+        high: numeral(data.data.markets.coinbase.daily_change.value).format('0.00 a'),
+        low: numeral(data.data.markets.coinbase.daily_change.value).format('0.00 a'),
         all: data.data.volume.all,
         current: numeral(data.data.volume.current).format('0.0a'),
         perc: data.data.volume.perc,
@@ -49,9 +54,9 @@ class HomepageHero extends Component {
           <Text style={[styles.headerBase, styles.price]}>${this.state.value}</Text>
     	    <View style={[styles.priceSubPanel]}>
     	      <View style={[styles.priceSubPanelFirstItem]}>
-              <Text style={[styles.priceSubPanelItem]}>High ${this.state.value}</Text>
+              <Text style={[styles.priceSubPanelItem]}>High {this.state.high}</Text>
     	      </View>
-            <Text style={[styles.priceSubPanelItem]}>${this.state.value} Low</Text>
+            <Text style={[styles.priceSubPanelItem]}>{this.state.low} Low</Text>
           </View>
         </View>
     	  <View style={[styles.header, styles.panel, styles.pricePanel]}>
