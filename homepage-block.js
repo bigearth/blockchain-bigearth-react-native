@@ -3,6 +3,7 @@ import {
   Text,
   View,
   TouchableHighlight,
+  StyleSheet,
   ListView
 } from 'react-native';
 
@@ -30,7 +31,7 @@ class HomepageBlock extends Component {
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
-            <View>
+            <View style={[styles.container]}>
               <Text>{rowData.nb}</Text>
               <Text>{rowData.time_utc}</Text>
               <Text>{rowData.nb_txs}</Text>
@@ -44,5 +45,11 @@ class HomepageBlock extends Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row'
+  }
+});
 
 export default HomepageBlock;

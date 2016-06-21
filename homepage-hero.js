@@ -53,7 +53,7 @@ class HomepageHero extends Component {
         <Text style={[styles.headerBase]}>Difficulty is a measure of how difficult it is to find a new block below a given target.</Text>
         <Text style={[styles.headerBase, styles.headerTitle]}><Icon name="signal" size={20} /> Next <Text style={styles.headerSubtitle}>Difficulty</Text> (estimate)</Text>
         <Text style={[styles.headerBase]}>{this.state.next_difficulty}</Text>
-        <Text style={[styles.headerBase]}>+<Text style={[styles.next_difficulty_perc]}>{this.state.next_difficulty_perc}</Text> change to current</Text> 
+        <Text style={[styles.headerBase]}><Text style={[styles.next_difficulty_perc]}>+{this.state.next_difficulty_perc}%</Text> change to current</Text> 
         <Text style={[styles.headerBase]}>{this.state.retarget_in} blocks until difficulty changes</Text>
       </View>
     )

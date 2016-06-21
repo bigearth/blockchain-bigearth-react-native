@@ -7,46 +7,35 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
   Text,
+  Navigator,
+  StyleSheet,
   View
 } from 'react-native';
+import Homepage from './homepage.js';
+import Blocks from './blocks.js';
 
-class blockchain extends Component {
+class Blockchain extends Component {
+  renderScene(route, navigator) {
+    if(route.name == 'Home') {
+      return <Homepage navigator={navigator} {...route.passProps} />
+    }
+    if(route.name == 'Blocks') {
+      return <Blocks navigator={navigator} {...route.passProps} />
+    }
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+      <Navigator style={[styles.container]} initialRoute={{ name: 'Home' }} renderScene={ this.renderScene } />
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    flex: 1
+  }
 });
 
-AppRegistry.registerComponent('blockchain', () => blockchain);
+
+AppRegistry.registerComponent('blockchain', () => Blockchain);
