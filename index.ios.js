@@ -9,7 +9,6 @@ import {
   AppRegistry,
   Text,
   Navigator,
-  StyleSheet,
   View
 } from 'react-native';
 import Homepage from './homepage.js';
@@ -26,16 +25,9 @@ class Blockchain extends Component {
   }
   render() {
     return (
-      <Navigator style={[styles.container]} initialRoute={{ name: 'Home' }} renderScene={ this.renderScene } />
+      <Navigator initialRoute={{ name: 'Home' }} renderScene={ this.renderScene } />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});
-
 
 AppRegistry.registerComponent('blockchain', () => Blockchain);
