@@ -6,6 +6,7 @@ import {
   StyleSheet
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Numeral from 'numeral'
 import style from './style.js'
 
 class HomepageSub extends Component {
@@ -36,7 +37,8 @@ class HomepageSub extends Component {
             <View style={[style.homepageSubPanel]}>
               <View style={[style.homepageBlockItem]}>
                 <Text><Icon name="th-large" /></Text>
-                <Text>{rowData.nb}</Text>
+                <Text>{numeral(rowData.nb).format('0,0')}</Text>
+        
               </View>
               <View style={[style.homepageBlockItem]}>
                 <Text><Icon name="calendar" /></Text>
@@ -44,19 +46,19 @@ class HomepageSub extends Component {
               </View>
               <View style={[style.homepageBlockItem]}>
                 <Text><Icon name="arrows-h" /></Text>
-                <Text>{rowData.nb_txs}</Text>
+                <Text>{numeral(rowData.nb_txs).format('0,0')}</Text>
               </View>
               <View style={[style.homepageBlockItem]}>
                 <Text><Icon name="btc" /></Text>
-                <Text>{rowData.fee}</Text>
+                <Text>{numeral(rowData.fee).format('0.00')}</Text>
               </View>
               <View style={[style.homepageBlockItem]}>
                 <Text><Icon name="calculator" /></Text>
-                <Text>{rowData.size}</Text>
+                <Text>{numeral(rowData.size).format('0 b')}</Text>
               </View>
               <View style={[style.homepageBlockItem]}>
                 <Text><Icon name="close" /></Text>
-                <Text>{rowData.days_destroyed}</Text>
+                <Text>{numeral(rowData.days_destroyed).format('0.0a')}</Text>
               </View>
             </View>
           }
