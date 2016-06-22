@@ -96,6 +96,7 @@ homepageHeroDetails {
 homepageSubPanel {
   @include homepagePanel;
   @include row;
+  padding: 5px;
 }
 
 homepageSubTitle {

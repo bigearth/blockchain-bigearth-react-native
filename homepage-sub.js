@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Numeral from 'numeral'
+import Moment from 'moment'
 import style from './style.js'
 
 class HomepageSub extends Component {
@@ -15,7 +16,7 @@ class HomepageSub extends Component {
     this.state = {
       dataSource: new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
     };
-    fetch('https://stageblockchain.bigearth.io/blocks/416614,416613,416612,416611,416610,416609,416608,416607,416606,416605,416604,416603,416602,416601,416600,416599,416598,416597,416596,416595.json')
+    fetch('https://stageblockchain.bigearth.io/blocks/417500,417499,417498,417497,417496,417495,417494,417493,417492,417491,417490,417489,417488,417487,417486,417485,417484,417483,417482,417481.json')
     .then((response) => response.text())
     .then((responseText) => {
       let data = JSON.parse(responseText);
@@ -38,11 +39,10 @@ class HomepageSub extends Component {
               <View style={[style.homepageBlockItem]}>
                 <Text><Icon name="th-large" /></Text>
                 <Text>{numeral(rowData.nb).format('0,0')}</Text>
-        
               </View>
               <View style={[style.homepageBlockItem]}>
                 <Text><Icon name="calendar" /></Text>
-                <Text>{rowData.time_utc}</Text>
+                <Text>{Moment(rowData.time_utc).fromNow()}</Text>
               </View>
               <View style={[style.homepageBlockItem]}>
                 <Text><Icon name="arrows-h" /></Text>
