@@ -47,7 +47,7 @@ $sub: #579dd8;
 // Generic and common styles
 hero {
   background-color: $hero;
-  padding: 5px;
+  padding: 5px 5px 0 5px;
 }
 
 subs {
@@ -96,6 +96,7 @@ homepageHeroDetails {
 homepageSubPanel {
   @include homepagePanel;
   @include row;
+  justify-content: center;
   padding: 5px;
 }
 
@@ -108,4 +109,16 @@ homepageBlockItem {
   @include flex;
   margin: 2px;
   @include center;
+  padding-top: 5px;
+}
+
+homepageBlockTime {
+  font-size: 13px;
+  text-align: center
+}
+
+homepageBlockIcon {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  color: $hero;
 }

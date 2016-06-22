@@ -35,29 +35,29 @@ class HomepageSub extends Component {
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
-            <View style={[style.homepageSubPanel]}>
+            <View style={[style.homepageSubPanel, styles.shadow]}>
               <View style={[style.homepageBlockItem]}>
-                <Text><Icon name="th-large" /></Text>
+                <Text style={[style.homepageBlockIcon]}><Icon name="th-large" /></Text>
                 <Text>{numeral(rowData.nb).format('0,0')}</Text>
               </View>
               <View style={[style.homepageBlockItem]}>
-                <Text><Icon name="calendar" /></Text>
-                <Text>{Moment(rowData.time_utc).fromNow()}</Text>
+                <Text style={[style.homepageBlockIcon]}><Icon name="calendar" /></Text>
+                <Text style={[style.homepageBlockTime]}>{Moment(rowData.time_utc).fromNow()}</Text>
               </View>
               <View style={[style.homepageBlockItem]}>
-                <Text><Icon name="arrows-h" /></Text>
+                <Text style={[style.homepageBlockIcon]}><Icon name="arrows-h" /></Text>
                 <Text>{numeral(rowData.nb_txs).format('0,0')}</Text>
               </View>
               <View style={[style.homepageBlockItem]}>
-                <Text><Icon name="btc" /></Text>
+                <Text style={[style.homepageBlockIcon]}><Icon name="btc" /></Text>
                 <Text>{numeral(rowData.fee).format('0.00')}</Text>
               </View>
               <View style={[style.homepageBlockItem]}>
-                <Text><Icon name="calculator" /></Text>
+                <Text style={[style.homepageBlockIcon]}><Icon name="calculator" /></Text>
                 <Text>{numeral(rowData.size).format('0 b')}</Text>
               </View>
               <View style={[style.homepageBlockItem]}>
-                <Text><Icon name="close" /></Text>
+                <Text style={[style.homepageBlockIcon]}><Icon name="close" /></Text>
                 <Text>{numeral(rowData.days_destroyed).format('0.0a')}</Text>
               </View>
             </View>
@@ -77,6 +77,15 @@ const styles = StyleSheet.create({
   },
   subBase: {
     fontSize: 17
+  },
+  shadow: {
+    shadowColor: "#000",
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 1,
+      width: 0
+    }
   }
 });
 

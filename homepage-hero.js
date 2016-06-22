@@ -50,7 +50,7 @@ class HomepageHero extends Component {
 	render() {    
     return (
     	<View style={[style.hero]}>
-    	  <View style={[style.homepageHeroPanel]}>
+    	  <View style={[style.homepageHeroPanel, styles.shadow]}>
           <Text style={[style.homepageHeroTitle]}>Bitcoin</Text>
           <Text style={[styles.price]}>${this.state.value}</Text>
     	    <View style={[style.row]}>
@@ -60,7 +60,7 @@ class HomepageHero extends Component {
             <Text style={[style.homepageHeroDetails]}>{this.state.low} Low</Text>
           </View>
         </View>
-    	  <View style={[style.homepageHeroPanel]}>
+    	  <View style={[style.homepageHeroPanel, styles.shadow]}>
     	    <View style={[style.row]}>
     	      <View style={[styles.subPanelBorder]}>
               <Text style={[style.homepageHeroDetailsTitle]}>Market Cap</Text>
@@ -91,6 +91,15 @@ const styles = StyleSheet.create({
     borderRightWidth: 1,
     borderRightColor: '#579dd8',
     borderStyle: 'solid'
+  },
+  shadow: {
+    shadowColor: "#111",
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 1,
+      width: 0
+    }
   }
 });
 
