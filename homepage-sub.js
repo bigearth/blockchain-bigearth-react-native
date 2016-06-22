@@ -34,12 +34,30 @@ class HomepageSub extends Component {
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
             <View style={[style.homepageSubPanel]}>
-              <Text>{rowData.nb}</Text>
-              <Text>{rowData.time_utc}</Text>
-              <Text>{rowData.nb_txs}</Text>
-              <Text>{rowData.fee}</Text>
-              <Text>{rowData.size}</Text>
-              <Text>{rowData.days_destroyed}</Text>
+              <View style={[style.homepageBlockItem]}>
+                <Text><Icon name="th-large" /></Text>
+                <Text>{rowData.nb}</Text>
+              </View>
+              <View style={[style.homepageBlockItem]}>
+                <Text><Icon name="calendar" /></Text>
+                <Text>{rowData.time_utc}</Text>
+              </View>
+              <View style={[style.homepageBlockItem]}>
+                <Text><Icon name="arrows-h" /></Text>
+                <Text>{rowData.nb_txs}</Text>
+              </View>
+              <View style={[style.homepageBlockItem]}>
+                <Text><Icon name="btc" /></Text>
+                <Text>{rowData.fee}</Text>
+              </View>
+              <View style={[style.homepageBlockItem]}>
+                <Text><Icon name="calculator" /></Text>
+                <Text>{rowData.size}</Text>
+              </View>
+              <View style={[style.homepageBlockItem]}>
+                <Text><Icon name="close" /></Text>
+                <Text>{rowData.days_destroyed}</Text>
+              </View>
             </View>
           }
           initialListSize={14}/>

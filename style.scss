@@ -96,10 +96,15 @@ homepageHeroDetails {
 homepageSubPanel {
   @include homepagePanel;
   @include row;
-  padding: 10px;
 }
 
 homepageSubTitle {
   @include heroText;
   @include bold;
+}
+
+homepageBlockItem {
+  @include flex;
+  margin: 2px;
+  @include center;
 }
