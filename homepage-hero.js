@@ -51,7 +51,7 @@ class HomepageHero extends Component {
     return (
     	<View style={[style.hero]}>
     	  <View style={[style.homepageHeroPanel]}>
-          <Text style={[styles.heroTitle, style.bold]}><Icon name="btc" size={20} /> Bitcoin</Text>
+          <Text style={[style.homepageHeroTitle]}><Icon name="btc" size={20} /> Bitcoin</Text>
           <Text style={[styles.price]}>${this.state.value}</Text>
     	    <View style={[style.row]}>
     	      <View style={[styles.subPanelBorder]}>
@@ -63,16 +63,16 @@ class HomepageHero extends Component {
     	  <View style={[style.homepageHeroPanel]}>
     	    <View style={[style.row]}>
     	      <View style={[styles.subPanelBorder]}>
-              <Text style={[style.bold, style.right, styles.subPanelItem]}>Market Cap</Text>
-              <Text style={[style.bold, style.right, styles.subPanelItem]}>Total BTC</Text>
-              <Text style={[style.bold, style.right, styles.subPanelItem]}>Hash Rate</Text>
-              <Text style={[style.bold, style.right, styles.subPanelItem]}>Next Difficulty</Text>
+              <Text style={[style.homepageHeroDetailsTitle]}>Market Cap</Text>
+              <Text style={[style.homepageHeroDetailsTitle]}>Total BTC</Text>
+              <Text style={[style.homepageHeroDetailsTitle]}>Hash Rate</Text>
+              <Text style={[style.homepageHeroDetailsTitle]}>Next Difficulty</Text>
     	      </View>
     	      <View style={[]}>
-              <Text style={[styles.subPanelItem]}>{this.state.market_cap}</Text>
-              <Text style={[styles.subPanelItem]}>{this.state.current}</Text>
-              <Text style={[styles.subPanelItem]}>{this.state.difficulty}</Text>
-              <Text style={[styles.subPanelItem]}>{this.state.retarget_in}</Text>
+              <Text style={[style.homepageHeroDetails]}>{this.state.market_cap}</Text>
+              <Text style={[style.homepageHeroDetails]}>{this.state.current}</Text>
+              <Text style={[style.homepageHeroDetails]}>{this.state.difficulty}</Text>
+              <Text style={[style.homepageHeroDetails]}>{this.state.retarget_in}</Text>
     	      </View>
           </View>
         </View>
@@ -82,10 +82,6 @@ class HomepageHero extends Component {
 }
 
 const styles = StyleSheet.create({
-  heroTitle: {
-    paddingTop: 10,
-    fontSize: 20
-  },
   price: {
     fontSize: 65,
     fontWeight: '500'
@@ -94,9 +90,6 @@ const styles = StyleSheet.create({
     borderRightWidth: 1,
     borderRightColor: '#000',
     borderStyle: 'solid'
-  },
-  subPanelItem: {
-    padding: 10
   }
 });
 

@@ -11,6 +11,10 @@ $subs: #579dd8;
   align-items: center;
 }
 
+@mixin right {
+  text-align: right;
+}
+
 @mixin heroText{
   color: $hero;
 }
@@ -39,10 +43,6 @@ row {
   flex-direction: row;
 }
 
-right {
-  text-align: right;
-}
-
 flex {
   flex: 1;
 }
@@ -63,6 +63,22 @@ subsText{
 homepageHeroPanel {
   @include homepagePanel;
   @include center;
+}
+
+homepageHeroTitle {
+  padding-top: 10px;
+  font-size: 20px;
+  @include bold;
+}
+
+homepageHeroDetailsTitle {
+  padding: 10px;
+  @include bold;
+  @include right;
+}
+
+homepageHeroDetails {
+  padding: 10px;
 }
 
 homepageSubPanel {
