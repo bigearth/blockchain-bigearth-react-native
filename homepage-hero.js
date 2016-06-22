@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Numeral from 'numeral'
+import style from './style.js'
 
 class HomepageHero extends Component {
   constructor(props) {
@@ -48,24 +49,24 @@ class HomepageHero extends Component {
   }
 	render() {    
     return (
-    	<View style={[styles.header]}>
-    	  <View style={[styles.header, styles.panel, styles.pricePanel]}>
-          <Text style={[styles.headerBase, styles.headerTitle]}><Icon name="btc" size={20} /> Bitcoin</Text>
+    	<View style={[style.hero]}>
+    	  <View style={[style.panel, style.center]}>
+          <Text style={[styles.headerBase, styles.headerTitle, style.bold]}><Icon name="btc" size={20} /> Bitcoin</Text>
           <Text style={[styles.headerBase, styles.price]}>${this.state.value}</Text>
-    	    <View style={[styles.priceSubPanel]}>
+    	    <View style={[style.row]}>
     	      <View style={[styles.priceSubPanelFirstItem]}>
               <Text style={[styles.priceSubPanelItem]}>High {this.state.high}</Text>
     	      </View>
             <Text style={[styles.priceSubPanelItem]}>{this.state.low} Low</Text>
           </View>
         </View>
-    	  <View style={[styles.header, styles.panel, styles.pricePanel]}>
-    	    <View style={[styles.priceSubPanel]}>
+    	  <View style={[style.panel, style.center]}>
+    	    <View style={[style.row]}>
     	      <View style={[styles.priceSubPanelFirstItem]}>
-              <Text style={[styles.bold, styles.priceSubPanelItem]}>Market Cap</Text>
-              <Text style={[styles.bold, styles.priceSubPanelItem]}>Total BTC</Text>
-              <Text style={[styles.bold, styles.priceSubPanelItem]}>Hash Rate</Text>
-              <Text style={[styles.bold, styles.priceSubPanelItem]}>Next Difficulty</Text>
+              <Text style={[style.bold, style.right, styles.priceSubPanelItem]}>Market Cap</Text>
+              <Text style={[style.bold, style.right, styles.priceSubPanelItem]}>Total BTC</Text>
+              <Text style={[style.bold, style.right, styles.priceSubPanelItem]}>Hash Rate</Text>
+              <Text style={[style.bold, style.right, styles.priceSubPanelItem]}>Next Difficulty</Text>
     	      </View>
     	      <View style={[]}>
               <Text style={[styles.priceSubPanelItem]}>{this.state.market_cap}</Text>
@@ -81,19 +82,9 @@ class HomepageHero extends Component {
 }
 
 const styles = StyleSheet.create({
-  header: {
-    backgroundColor: '#0F5288',
-    padding: 5
-  },
-  pricePanel: {
-    alignItems: 'center'
-  },
   price: {
     fontSize: 65,
     fontWeight: '500'
-  },
-  priceSubPanel: {
-    flexDirection: 'row'
   },
   priceSubPanelFirstItem: {
     borderRightWidth: 1,
@@ -103,29 +94,13 @@ const styles = StyleSheet.create({
   priceSubPanelItem: {
     padding: 10
   },
-  bold: {
-    fontWeight: 'bold',
-    textAlign: 'right'
-  },
   headerBase: {
     paddingTop: 10,
     fontWeight: '200',
     fontSize: 12
   },
   headerTitle: {
-    fontWeight: 'bold',
     fontSize: 20
-  },
-  headerSubtitle: {
-    color: '#03233b'
-  },
-  next_difficulty_perc: {
-    backgroundColor: 'green',
-    color: 'white'
-  },
-  panel: {
-    backgroundColor: '#eee',
-    marginBottom: 5
   }
 });
 

@@ -1,0 +1,1 @@
+module.exports = require('react-native').StyleSheet.create({"panel":{"backgroundColor":"#eee","marginBottom":5},"hero":{"backgroundColor":"#0F5288","paddingTop":5,"paddingBottom":5,"paddingRight":5,"paddingLeft":5},"row":{"flexDirection":"row"},"center":{"alignItems":"center"},"right":{"textAlign":"right"},"bold":{"fontWeight":"bold"}});

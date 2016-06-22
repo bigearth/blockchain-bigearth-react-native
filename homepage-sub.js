@@ -6,6 +6,7 @@ import {
   StyleSheet
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import style from './style.js'
 
 class HomepageSub extends Component {
   constructor(props) {
@@ -44,15 +45,13 @@ class HomepageSub extends Component {
           style={styles.listViewContainer}
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
-            <View style={[styles.buttonContainer]}>
-              <View style={[styles.row]}>
-                <Text>{rowData.nb}</Text>
-                <Text>{rowData.time_utc}</Text>
-                <Text>{rowData.nb_txs}</Text>
-                <Text>{rowData.fee}</Text>
-                <Text>{rowData.size}</Text>
-                <Text>{rowData.days_destroyed}</Text>
-              </View>
+            <View style={[styles.panel, style.panel]}>
+              <Text>{rowData.nb}</Text>
+              <Text>{rowData.time_utc}</Text>
+              <Text>{rowData.nb_txs}</Text>
+              <Text>{rowData.fee}</Text>
+              <Text>{rowData.size}</Text>
+              <Text>{rowData.days_destroyed}</Text>
             </View>
           }
           initialListSize={14}/>
@@ -76,12 +75,6 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row'
-  },
-  buttonContainer: {
-    flex: 1,
-    flexDirection: 'column',
-    padding: 15,
-    backgroundColor: "#EEE",
   },
   subBase: {
     color: '#fff',
