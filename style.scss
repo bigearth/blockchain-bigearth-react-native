@@ -1,11 +1,23 @@
+$hero: #0F5288;
+$subs: #579dd8;
+
 panel {
   background-color: #eee;
   margin-bottom: 5px;
 }
 
 hero {
-  background-color: #0F5288;
+  background-color: $hero;
   padding: 5px;
+}
+
+subs {
+  background-color: $subs;
+  padding: 5px;
+}
+
+column {
+  flex-direction: column;
 }
 
 row {
@@ -22,4 +34,20 @@ right {
 
 bold {
   font-weight: bold;
+}
+
+flex {
+  flex: 1;
+}
+
+white {
+  color: #fff;
+}
+
+heroText{
+  color: $hero;
+}
+
+subsText{
+  color: $subs;
 }

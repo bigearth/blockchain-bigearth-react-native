@@ -29,10 +29,10 @@ class HomepageSub extends Component {
 	render() {    
     return (
       <View 
-        style={styles.container}>
-        <View style={[styles.sub]}>
-          <Text style={[styles.subBase]}><Icon style={[styles.subBase]} name="th" /> Last 20 <Text style={[styles.subBaseSubtitle]}>Bitcoin</Text> Blocks</Text>
-          <View style={[styles.row]}>
+        style={[style.subs, style.flex, style.column]}>
+        <View style={[styles.subs]}>
+          <Text style={[styles.subBase, style.white]}><Icon style={[styles.subBase, style.white]} name="th" /> Last 20 <Text style={[style.heroText, style.bold]}>Bitcoin</Text> Blocks</Text>
+          <View style={[style.row]}>
             <Text>Height</Text>
             <Text>Created</Text>
             <Text>Transactions</Text>
@@ -45,7 +45,7 @@ class HomepageSub extends Component {
           style={styles.listViewContainer}
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
-            <View style={[styles.panel, style.panel]}>
+            <View style={[style.panel]}>
               <Text>{rowData.nb}</Text>
               <Text>{rowData.time_utc}</Text>
               <Text>{rowData.nb_txs}</Text>
@@ -61,11 +61,6 @@ class HomepageSub extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#579dd8'
-  },
   listViewContainer: {
       flex: 1,
       flexDirection: 'column'
@@ -73,17 +68,9 @@ const styles = StyleSheet.create({
   sub: {
     padding: 20
   },
-  row: {
-    flexDirection: 'row'
-  },
   subBase: {
-    color: '#fff',
     fontSize: 17
-  },
-  subBaseSubtitle: {
-    color: '#0F5288',
-    fontWeight: 'bold'
-}
+  }
 });
 
 export default HomepageSub;
