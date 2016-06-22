@@ -3,6 +3,7 @@ import {
   Text,
   View,
   ListView,
+  TouchableHighlight,
   StyleSheet
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -35,32 +36,34 @@ class HomepageSub extends Component {
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
-            <View style={[style.homepageSubPanel, styles.shadow]}>
-              <View style={[style.homepageBlockItem]}>
-                <Text style={[style.homepageBlockIcon]}><Icon name="th-large" /></Text>
-                <Text>{numeral(rowData.nb).format('0,0')}</Text>
+            <TouchableHighlight onPress={() => this.setState({ toggled: 'asdf' })} underlayColor="black">
+              <View style={[style.homepageSubPanel, styles.shadow]}>
+                <View style={[style.homepageBlockItem]}>
+                  <Text style={[style.homepageBlockIcon]}><Icon name="th-large" /></Text>
+                  <Text>{numeral(rowData.nb).format('0,0')}</Text>
+                </View>
+                <View style={[style.homepageBlockItem]}>
+                  <Text style={[style.homepageBlockIcon]}><Icon name="calendar" /></Text>
+                  <Text style={[style.homepageBlockTime]}>{Moment(rowData.time_utc).fromNow()}</Text>
+                </View>
+                <View style={[style.homepageBlockItem]}>
+                  <Text style={[style.homepageBlockIcon]}><Icon name="arrows-h" /></Text>
+                  <Text>{numeral(rowData.nb_txs).format('0,0')}</Text>
+                </View>
+                <View style={[style.homepageBlockItem]}>
+                  <Text style={[style.homepageBlockIcon]}><Icon name="btc" /></Text>
+                  <Text>{numeral(rowData.fee).format('0.00')}</Text>
+                </View>
+                <View style={[style.homepageBlockItem]}>
+                  <Text style={[style.homepageBlockIcon]}><Icon name="calculator" /></Text>
+                  <Text>{numeral(rowData.size).format('0 b')}</Text>
+                </View>
+                <View style={[style.homepageBlockItem]}>
+                  <Text style={[style.homepageBlockIcon]}><Icon name="close" /></Text>
+                  <Text>{numeral(rowData.days_destroyed).format('0.0a')}</Text>
+                </View>
               </View>
-              <View style={[style.homepageBlockItem]}>
-                <Text style={[style.homepageBlockIcon]}><Icon name="calendar" /></Text>
-                <Text style={[style.homepageBlockTime]}>{Moment(rowData.time_utc).fromNow()}</Text>
-              </View>
-              <View style={[style.homepageBlockItem]}>
-                <Text style={[style.homepageBlockIcon]}><Icon name="arrows-h" /></Text>
-                <Text>{numeral(rowData.nb_txs).format('0,0')}</Text>
-              </View>
-              <View style={[style.homepageBlockItem]}>
-                <Text style={[style.homepageBlockIcon]}><Icon name="btc" /></Text>
-                <Text>{numeral(rowData.fee).format('0.00')}</Text>
-              </View>
-              <View style={[style.homepageBlockItem]}>
-                <Text style={[style.homepageBlockIcon]}><Icon name="calculator" /></Text>
-                <Text>{numeral(rowData.size).format('0 b')}</Text>
-              </View>
-              <View style={[style.homepageBlockItem]}>
-                <Text style={[style.homepageBlockIcon]}><Icon name="close" /></Text>
-                <Text>{numeral(rowData.days_destroyed).format('0.0a')}</Text>
-              </View>
-            </View>
+            </TouchableHighlight>
           }
           initialListSize={14}/>
       </View>
