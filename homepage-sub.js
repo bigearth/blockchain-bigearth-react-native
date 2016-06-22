@@ -29,6 +29,12 @@ class HomepageSub extends Component {
       console.warn(error);
     });
   }
+  propTypes: {
+    onPress: React.PropTypes.func
+  }
+  _handlePress(data) {
+    this.props.onPress(data);
+  }
 	render() {    
     return (
       <View 
@@ -36,7 +42,7 @@ class HomepageSub extends Component {
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
-            <TouchableHighlight onPress={() => this.setState({ toggled: 'asdf' })} underlayColor="black">
+            <TouchableHighlight onPress={this._handlePress.bind(this, "First")}>
               <View style={[style.homepageSubPanel, styles.shadow]}>
                 <View style={[style.homepageBlockItem]}>
                   <Text style={[style.homepageBlockIcon]}><Icon name="th-large" /></Text>

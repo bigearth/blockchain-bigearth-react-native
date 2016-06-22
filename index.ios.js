@@ -9,6 +9,7 @@ import {
   AppRegistry,
   Text,
   Navigator,
+  StyleSheet,
   View
 } from 'react-native';
 import Homepage from './homepage.js';

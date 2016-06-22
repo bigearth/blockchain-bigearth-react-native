@@ -12,12 +12,18 @@ class Homepage extends Component {
   constructor(props) {
     super(props);
   }
+  _handlePress(msg) {
+    console.log('foobar');
+    // this.setState({
+    //     text: msg
+    // });
+  }
 	render() {    
     return (
     	<View 
         style={styles.container}>
         <HomepageHero />
-        <HomepageSub />
+        <HomepageSub onPress={this._handlePress} />
       </View>
     )
   }
