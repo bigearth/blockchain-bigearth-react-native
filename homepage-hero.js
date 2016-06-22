@@ -51,13 +51,13 @@ class HomepageHero extends Component {
     return (
     	<View style={[style.hero]}>
     	  <View style={[style.homepageHeroPanel]}>
-          <Text style={[style.homepageHeroTitle]}><Icon name="btc" size={20} /> Bitcoin</Text>
+          <Text style={[style.homepageHeroTitle]}>Bitcoin</Text>
           <Text style={[styles.price]}>${this.state.value}</Text>
     	    <View style={[style.row]}>
     	      <View style={[styles.subPanelBorder]}>
-              <Text style={[styles.subPanelItem]}>High {this.state.high}</Text>
+              <Text style={[style.homepageHeroDetails]}>High {this.state.high}</Text>
     	      </View>
-            <Text style={[styles.subPanelItem]}>{this.state.low} Low</Text>
+            <Text style={[style.homepageHeroDetails]}>{this.state.low} Low</Text>
           </View>
         </View>
     	  <View style={[style.homepageHeroPanel]}>
@@ -68,7 +68,7 @@ class HomepageHero extends Component {
               <Text style={[style.homepageHeroDetailsTitle]}>Hash Rate</Text>
               <Text style={[style.homepageHeroDetailsTitle]}>Next Difficulty</Text>
     	      </View>
-    	      <View style={[]}>
+    	      <View>
               <Text style={[style.homepageHeroDetails]}>{this.state.market_cap}</Text>
               <Text style={[style.homepageHeroDetails]}>{this.state.current}</Text>
               <Text style={[style.homepageHeroDetails]}>{this.state.difficulty}</Text>
@@ -84,11 +84,12 @@ class HomepageHero extends Component {
 const styles = StyleSheet.create({
   price: {
     fontSize: 65,
-    fontWeight: '500'
+    fontWeight: '500',
+    color: '#444'
   },
   subPanelBorder: {
     borderRightWidth: 1,
-    borderRightColor: '#000',
+    borderRightColor: '#579dd8',
     borderStyle: 'solid'
   }
 });

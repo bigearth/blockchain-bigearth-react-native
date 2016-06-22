@@ -1,6 +1,6 @@
 // Variables
 $hero: #0F5288;
-$subs: #579dd8;
+$sub: #579dd8;
 
 // Mixins
 @mixin bold {
@@ -19,9 +19,17 @@ $subs: #579dd8;
   color: $hero;
 }
 
+@mixin subText{
+  color: $sub;
+}
+
 @mixin panel {
   background-color: #eee;
   margin-bottom: 5px;
+}
+
+@mixin grey6 {
+  color: #666;
 }
 
 // Generic and common styles
@@ -31,7 +39,7 @@ hero {
 }
 
 subs {
-  background-color: $subs;
+  background-color: $sub;
   padding: 5px;
 }
 
@@ -52,7 +60,7 @@ white {
 }
 
 subsText{
-  color: $subs;
+  color: $sub;
 }
 
 // Hompage
@@ -63,22 +71,25 @@ subsText{
 homepageHeroPanel {
   @include homepagePanel;
   @include center;
+  padding: 10px;
 }
 
 homepageHeroTitle {
   padding-top: 10px;
   font-size: 20px;
-  @include bold;
+  @include subText;
 }
 
 homepageHeroDetailsTitle {
   padding: 10px;
   @include bold;
   @include right;
+  @include grey6;
 }
 
 homepageHeroDetails {
   padding: 10px;
+  @include grey6;
 }
 
 homepageSubPanel {
