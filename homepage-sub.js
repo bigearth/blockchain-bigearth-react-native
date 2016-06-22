@@ -42,7 +42,7 @@ class HomepageSub extends Component {
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
-            <TouchableHighlight onPress={this._handlePress.bind(this, "First")}>
+            <TouchableHighlight onPress={this._handlePress.bind(this, rowData.nb)}>
               <View style={[style.homepageSubPanel, styles.shadow]}>
                 <View style={[style.homepageBlockItem]}>
                   <Text style={[style.homepageBlockIcon]}><Icon name="th-large" /></Text>

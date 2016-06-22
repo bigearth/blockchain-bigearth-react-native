@@ -12,18 +12,23 @@ class Homepage extends Component {
   constructor(props) {
     super(props);
   }
-  _handlePress(msg) {
-    console.log('foobar');
-    // this.setState({
-    //     text: msg
-    // });
+  _navigate(id) {
+    this.props.navigator.push({
+      name: 'Home',
+      passProps: {
+        id: id
+      }
+    })
+  }
+  _handlePress(id) {
+    this._navigate(id);
   }
 	render() {    
     return (
     	<View 
         style={styles.container}>
         <HomepageHero />
-        <HomepageSub onPress={this._handlePress} />
+        <HomepageSub onPress={this._handlePress.bind(this)} />
       </View>
     )
   }
