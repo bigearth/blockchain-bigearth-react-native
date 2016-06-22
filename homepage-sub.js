@@ -29,20 +29,8 @@ class HomepageSub extends Component {
 	render() {    
     return (
       <View 
-        style={[style.subs, style.flex, style.column]}>
-        <View style={[styles.subs]}>
-          <Text style={[styles.subBase, style.white]}><Icon style={[styles.subBase, style.white]} name="th" /> Last 20 <Text style={[style.homepageSubTitle]}>Bitcoin</Text> Blocks</Text>
-          <View style={[style.row]}>
-            <Text>Height</Text>
-            <Text>Created</Text>
-            <Text>Transactions</Text>
-            <Text>Fee</Text>
-            <Text>Size</Text>
-            <Text>Days Destroyed</Text>
-          </View>
-        </View>
+        style={[style.subs]}>
         <ListView
-          style={[style.column, style.flex]}
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
             <View style={[style.homepageSubPanel]}>

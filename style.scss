@@ -3,6 +3,18 @@ $hero: #0F5288;
 $sub: #579dd8;
 
 // Mixins
+@mixin flex {
+  flex: 1;
+}
+
+@mixin column {
+  flex-direction: column;
+}
+
+@mixin row {
+  flex-direction: row;
+}
+
 @mixin bold {
   font-weight: bold;
 }
@@ -41,26 +53,15 @@ hero {
 subs {
   background-color: $sub;
   padding: 5px;
-}
-
-column {
-  flex-direction: column;
-}
-
-row {
-  flex-direction: row;
-}
-
-flex {
-  flex: 1;
-}
-
-white {
-  color: #fff;
+  @include flex;
 }
 
 subsText{
   color: $sub;
+}
+
+row {
+  @include row;
 }
 
 // Hompage
@@ -81,19 +82,21 @@ homepageHeroTitle {
 }
 
 homepageHeroDetailsTitle {
-  padding: 10px;
+  padding: 7px;
   @include bold;
   @include right;
   @include grey6;
 }
 
 homepageHeroDetails {
-  padding: 10px;
+  padding: 7px;
   @include grey6;
 }
 
 homepageSubPanel {
   @include homepagePanel;
+  @include row;
+  padding: 10px;
 }
 
 homepageSubTitle {
