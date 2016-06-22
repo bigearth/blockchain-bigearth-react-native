@@ -1,11 +1,26 @@
+// Variables
 $hero: #0F5288;
 $subs: #579dd8;
 
-panel {
+// Mixins
+@mixin bold {
+  font-weight: bold;
+}
+
+@mixin center {
+  align-items: center;
+}
+
+@mixin heroText{
+  color: $hero;
+}
+
+@mixin panel {
   background-color: #eee;
   margin-bottom: 5px;
 }
 
+// Generic and common styles
 hero {
   background-color: $hero;
   padding: 5px;
@@ -24,16 +39,8 @@ row {
   flex-direction: row;
 }
 
-center {
-  align-items: center;
-}
-
 right {
   text-align: right;
-}
-
-bold {
-  font-weight: bold;
 }
 
 flex {
@@ -44,10 +51,25 @@ white {
   color: #fff;
 }
 
-heroText{
-  color: $hero;
-}
-
 subsText{
   color: $subs;
+}
+
+// Hompage
+@mixin homepagePanel {
+  @include panel;
+}
+
+homepageHeroPanel {
+  @include homepagePanel;
+  @include center;
+}
+
+homepageSubPanel {
+  @include homepagePanel;
+}
+
+homepageSubTitle {
+  @include heroText;
+  @include bold;
 }

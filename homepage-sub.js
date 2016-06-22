@@ -31,7 +31,7 @@ class HomepageSub extends Component {
       <View 
         style={[style.subs, style.flex, style.column]}>
         <View style={[styles.subs]}>
-          <Text style={[styles.subBase, style.white]}><Icon style={[styles.subBase, style.white]} name="th" /> Last 20 <Text style={[style.heroText, style.bold]}>Bitcoin</Text> Blocks</Text>
+          <Text style={[styles.subBase, style.white]}><Icon style={[styles.subBase, style.white]} name="th" /> Last 20 <Text style={[style.homepageSubTitle]}>Bitcoin</Text> Blocks</Text>
           <View style={[style.row]}>
             <Text>Height</Text>
             <Text>Created</Text>
@@ -42,10 +42,10 @@ class HomepageSub extends Component {
           </View>
         </View>
         <ListView
-          style={styles.listViewContainer}
+          style={[style.column, style.flex]}
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
-            <View style={[style.panel]}>
+            <View style={[style.homepageSubPanel]}>
               <Text>{rowData.nb}</Text>
               <Text>{rowData.time_utc}</Text>
               <Text>{rowData.nb_txs}</Text>
@@ -62,8 +62,7 @@ class HomepageSub extends Component {
 
 const styles = StyleSheet.create({
   listViewContainer: {
-      flex: 1,
-      flexDirection: 'column'
+    flex: 1
   },
   sub: {
     padding: 20

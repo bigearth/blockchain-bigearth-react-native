@@ -50,7 +50,7 @@ class HomepageHero extends Component {
 	render() {    
     return (
     	<View style={[style.hero]}>
-    	  <View style={[style.panel, style.center]}>
+    	  <View style={[style.homepageHeroPanel]}>
           <Text style={[styles.heroTitle, style.bold]}><Icon name="btc" size={20} /> Bitcoin</Text>
           <Text style={[styles.price]}>${this.state.value}</Text>
     	    <View style={[style.row]}>
@@ -60,7 +60,7 @@ class HomepageHero extends Component {
             <Text style={[styles.subPanelItem]}>{this.state.low} Low</Text>
           </View>
         </View>
-    	  <View style={[style.panel, style.center]}>
+    	  <View style={[style.homepageHeroPanel]}>
     	    <View style={[style.row]}>
     	      <View style={[styles.subPanelBorder]}>
               <Text style={[style.bold, style.right, styles.subPanelItem]}>Market Cap</Text>
