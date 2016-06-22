@@ -51,28 +51,28 @@ class HomepageHero extends Component {
     return (
     	<View style={[style.hero]}>
     	  <View style={[style.panel, style.center]}>
-          <Text style={[styles.headerBase, styles.headerTitle, style.bold]}><Icon name="btc" size={20} /> Bitcoin</Text>
-          <Text style={[styles.headerBase, styles.price]}>${this.state.value}</Text>
+          <Text style={[styles.heroTitle, style.bold]}><Icon name="btc" size={20} /> Bitcoin</Text>
+          <Text style={[styles.price]}>${this.state.value}</Text>
     	    <View style={[style.row]}>
-    	      <View style={[styles.priceSubPanelFirstItem]}>
-              <Text style={[styles.priceSubPanelItem]}>High {this.state.high}</Text>
+    	      <View style={[styles.subPanelBorder]}>
+              <Text style={[styles.subPanelItem]}>High {this.state.high}</Text>
     	      </View>
-            <Text style={[styles.priceSubPanelItem]}>{this.state.low} Low</Text>
+            <Text style={[styles.subPanelItem]}>{this.state.low} Low</Text>
           </View>
         </View>
     	  <View style={[style.panel, style.center]}>
     	    <View style={[style.row]}>
-    	      <View style={[styles.priceSubPanelFirstItem]}>
-              <Text style={[style.bold, style.right, styles.priceSubPanelItem]}>Market Cap</Text>
-              <Text style={[style.bold, style.right, styles.priceSubPanelItem]}>Total BTC</Text>
-              <Text style={[style.bold, style.right, styles.priceSubPanelItem]}>Hash Rate</Text>
-              <Text style={[style.bold, style.right, styles.priceSubPanelItem]}>Next Difficulty</Text>
+    	      <View style={[styles.subPanelBorder]}>
+              <Text style={[style.bold, style.right, styles.subPanelItem]}>Market Cap</Text>
+              <Text style={[style.bold, style.right, styles.subPanelItem]}>Total BTC</Text>
+              <Text style={[style.bold, style.right, styles.subPanelItem]}>Hash Rate</Text>
+              <Text style={[style.bold, style.right, styles.subPanelItem]}>Next Difficulty</Text>
     	      </View>
     	      <View style={[]}>
-              <Text style={[styles.priceSubPanelItem]}>{this.state.market_cap}</Text>
-              <Text style={[styles.priceSubPanelItem]}>{this.state.current}</Text>
-              <Text style={[styles.priceSubPanelItem]}>{this.state.difficulty}</Text>
-              <Text style={[styles.priceSubPanelItem]}>{this.state.retarget_in}</Text>
+              <Text style={[styles.subPanelItem]}>{this.state.market_cap}</Text>
+              <Text style={[styles.subPanelItem]}>{this.state.current}</Text>
+              <Text style={[styles.subPanelItem]}>{this.state.difficulty}</Text>
+              <Text style={[styles.subPanelItem]}>{this.state.retarget_in}</Text>
     	      </View>
           </View>
         </View>
@@ -82,25 +82,21 @@ class HomepageHero extends Component {
 }
 
 const styles = StyleSheet.create({
+  heroTitle: {
+    paddingTop: 10,
+    fontSize: 20
+  },
   price: {
     fontSize: 65,
     fontWeight: '500'
   },
-  priceSubPanelFirstItem: {
+  subPanelBorder: {
     borderRightWidth: 1,
     borderRightColor: '#000',
     borderStyle: 'solid'
   },
-  priceSubPanelItem: {
+  subPanelItem: {
     padding: 10
-  },
-  headerBase: {
-    paddingTop: 10,
-    fontWeight: '200',
-    fontSize: 12
-  },
-  headerTitle: {
-    fontSize: 20
   }
 });
 
