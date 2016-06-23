@@ -69,6 +69,11 @@ row {
   @include panel;
 }
 
+container {
+  @include flex;
+  @include column;
+}
+
 homepageHeroPanel {
   @include homepagePanel;
   @include center;

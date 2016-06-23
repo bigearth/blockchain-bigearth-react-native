@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
-  StyleSheet,
   TouchableHighlight
 } from 'react-native';
 import HomepageHero from './homepage-hero.js';
 import HomepageSub from './homepage-sub.js';
+import style from './style.js'
 
 class Homepage extends Component {
   constructor(props) {
@@ -26,19 +26,12 @@ class Homepage extends Component {
 	render() {    
     return (
     	<View 
-        style={styles.container}>
+        style={style.container}>
         <HomepageHero />
         <HomepageSub onPress={this._handlePress.bind(this)} />
       </View>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column'
-  }
-});
 
 export default Homepage;

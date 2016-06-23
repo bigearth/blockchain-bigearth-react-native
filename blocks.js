@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 import BlocksHero from './blocks-hero.js';
 import BlocksSub from './blocks-sub.js';
+import style from './style.js'
 
 class Blocks extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class Blocks extends Component {
   }
 	render() {    
     return (
-    	<View>
+    	<View 
+        style={style.container}>
         <BlocksHero id={this.props.id} />
         <BlocksSub id={this.props.id} />
       </View>
