@@ -36,7 +36,7 @@ class BlocksSub extends Component {
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
-            <TouchableHighlight onPress={this._handlePress.bind(this, rowData.nb)}>
+            <TouchableHighlight onPress={this._handlePress.bind(this, 'boom')}>
               <View style={[style.homepageSubPanel, styles.shadow]}>
                 <Text>{rowData.tx}</Text>
                 <Text>{rowData.days_destroyed}</Text>
@@ -52,12 +52,6 @@ class BlocksSub extends Component {
 }
 
 const styles = StyleSheet.create({
-  sub: {
-    padding: 20
-  },
-  subBase: {
-    fontSize: 17
-  },
   shadow: {
     shadowColor: "#000",
     shadowOpacity: 0.8,

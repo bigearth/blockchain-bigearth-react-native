@@ -70,20 +70,13 @@ class HomepageSub extends Component {
                 </View>
               </View>
             </TouchableHighlight>
-          }
-          initialListSize={14}/>
+          } />
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  sub: {
-    padding: 20
-  },
-  subBase: {
-    fontSize: 17
-  },
   shadow: {
     shadowColor: "#000",
     shadowOpacity: 0.8,
