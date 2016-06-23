@@ -14,7 +14,7 @@ class Blocks extends Component {
     return (
     	<View>
         <BlocksHero id={this.props.id} />
-        <BlocksSub />
+        <BlocksSub id={this.props.id} />
       </View>
     )
   }
