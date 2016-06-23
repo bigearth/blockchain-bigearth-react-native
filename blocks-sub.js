@@ -6,6 +6,8 @@ import {
   View,
   StyleSheet
 } from 'react-native';
+import BlocksSubVin from './blocks-sub-vin.js';
+import BlocksSubVout from './blocks-sub-vout.js';
 import style from './style.js'
 
 class BlocksSub extends Component {
@@ -43,11 +45,12 @@ class BlocksSub extends Component {
                   <Text>{rowData.days_destroyed}</Text>
                   <Text>{rowData.fee}</Text>
                   <Text>{rowData.vout_sum}</Text>
+                  <BlocksSubVin vins={rowData.trade.vins} />
+                  <BlocksSubVout vouts={rowData.trade.vouts} />
                 </View>
               </View>
             </TouchableHighlight>
-          }
-          initialListSize={14} />
+          } />
       </View>
     )
   }
