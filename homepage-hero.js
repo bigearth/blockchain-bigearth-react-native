@@ -41,29 +41,29 @@ class HomepageHero extends Component {
 	render() {    
     return (
     	<View style={[style.hero]}>
-    	  <View style={[style.homepageHeroPanel, styles.shadow]}>
-          <Text style={[style.homepageHeroTitle]}>Bitcoin</Text>
+    	  <View style={[style.heroPanel, styles.shadow]}>
+          <Text style={[style.heroTitle]}>Bitcoin</Text>
           <Text style={[styles.price]}>${this.state.value}</Text>
     	    <View style={[style.row]}>
     	      <View style={[styles.subPanelBorder]}>
-              <Text style={[style.homepageHeroDetails]}>High {this.state.high}</Text>
+              <Text style={[style.heroDetails]}>High {this.state.high}</Text>
     	      </View>
-            <Text style={[style.homepageHeroDetails]}>{this.state.low} Low</Text>
+            <Text style={[style.heroDetails]}>{this.state.low} Low</Text>
           </View>
         </View>
-    	  <View style={[style.homepageHeroPanel, styles.shadow]}>
+    	  <View style={[style.heroPanel, styles.shadow]}>
     	    <View style={[style.row]}>
     	      <View style={[styles.subPanelBorder]}>
-              <Text style={[style.homepageHeroDetailsTitle]}>Market Cap</Text>
-              <Text style={[style.homepageHeroDetailsTitle]}>Total BTC</Text>
-              <Text style={[style.homepageHeroDetailsTitle]}>Hash Rate</Text>
-              <Text style={[style.homepageHeroDetailsTitle]}>Next Difficulty</Text>
+              <Text style={[style.heroDetailsTitle]}>Market Cap</Text>
+              <Text style={[style.heroDetailsTitle]}>Total BTC</Text>
+              <Text style={[style.heroDetailsTitle]}>Hash Rate</Text>
+              <Text style={[style.heroDetailsTitle]}>Next Difficulty</Text>
     	      </View>
     	      <View>
-              <Text style={[style.homepageHeroDetails]}>{this.state.market_cap}</Text>
-              <Text style={[style.homepageHeroDetails]}>{this.state.current}</Text>
-              <Text style={[style.homepageHeroDetails]}>{this.state.difficulty}</Text>
-              <Text style={[style.homepageHeroDetails]}>{this.state.retarget_in}</Text>
+              <Text style={[style.heroDetails]}>{this.state.market_cap}</Text>
+              <Text style={[style.heroDetails]}>{this.state.current}</Text>
+              <Text style={[style.heroDetails]}>{this.state.difficulty}</Text>
+              <Text style={[style.heroDetails]}>{this.state.retarget_in}</Text>
     	      </View>
           </View>
         </View>

@@ -37,30 +37,30 @@ class BlocksHero extends Component {
 	render() {    
     return (
     	<View style={[style.hero]}>
-    	  <View style={[style.homepageHeroPanel, styles.shadow]}>
-          <Text style={[style.homepageHeroTitle]}>Block</Text>
+    	  <View style={[style.heroPanel, styles.shadow]}>
+          <Text style={[style.heroTitle]}>Block</Text>
     	    <View style={[style.row]}>
     	      <View style={[styles.subPanelBorder]}>
-              <Text style={[style.homepageHeroDetailsTitle]}>Height</Text>
-              <Text style={[style.homepageHeroDetailsTitle]}>Created</Text>
-              <Text style={[style.homepageHeroDetailsTitle]}>Trades Sum</Text>
-              <Text style={[style.homepageHeroDetailsTitle]}>Transactions</Text>
-              <Text style={[style.homepageHeroDetailsTitle]}>Difficulty</Text>
-              <Text style={[style.homepageHeroDetailsTitle]}>Fee</Text>
-              <Text style={[style.homepageHeroDetailsTitle]}>Confirmations</Text>
-              <Text style={[style.homepageHeroDetailsTitle]}>Size</Text>
-              <Text style={[style.homepageHeroDetailsTitle]}>Days Destroyed</Text>
+              <Text style={[style.heroDetailsTitle]}>Height</Text>
+              <Text style={[style.heroDetailsTitle]}>Created</Text>
+              <Text style={[style.heroDetailsTitle]}>Trades Sum</Text>
+              <Text style={[style.heroDetailsTitle]}>Transactions</Text>
+              <Text style={[style.heroDetailsTitle]}>Difficulty</Text>
+              <Text style={[style.heroDetailsTitle]}>Fee</Text>
+              <Text style={[style.heroDetailsTitle]}>Confirmations</Text>
+              <Text style={[style.heroDetailsTitle]}>Size</Text>
+              <Text style={[style.heroDetailsTitle]}>Days Destroyed</Text>
     	      </View>
     	      <View>
-              <Text style={[style.homepageHeroDetails]}>{this.state.nb}</Text>
-              <Text style={[style.homepageHeroDetails]}>{this.state.time_utc}</Text>
-              <Text style={[style.homepageHeroDetails]}>{this.state.vout_sum}</Text>
-              <Text style={[style.homepageHeroDetails]}>{this.state.nb_txs}</Text>
-              <Text style={[style.homepageHeroDetails]}>{this.state.difficulty}</Text>
-              <Text style={[style.homepageHeroDetails]}>{this.state.fee}</Text>
-              <Text style={[style.homepageHeroDetails]}>{this.state.confirmations}</Text>
-              <Text style={[style.homepageHeroDetails]}>{this.state.size}</Text>
-              <Text style={[style.homepageHeroDetails]}>{this.state.days_destroyed}</Text>
+              <Text style={[style.heroDetails]}>{this.state.nb}</Text>
+              <Text style={[style.heroDetails]}>{this.state.time_utc}</Text>
+              <Text style={[style.heroDetails]}>{this.state.vout_sum}</Text>
+              <Text style={[style.heroDetails]}>{this.state.nb_txs}</Text>
+              <Text style={[style.heroDetails]}>{this.state.difficulty}</Text>
+              <Text style={[style.heroDetails]}>{this.state.fee}</Text>
+              <Text style={[style.heroDetails]}>{this.state.confirmations}</Text>
+              <Text style={[style.heroDetails]}>{this.state.size}</Text>
+              <Text style={[style.heroDetails]}>{this.state.days_destroyed}</Text>
     	      </View>
           </View>
         </View>

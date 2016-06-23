@@ -74,55 +74,50 @@ container {
   @include column;
 }
 
-homepageHeroPanel {
+heroPanel {
   @include homepagePanel;
   @include center;
   padding: 10px;
 }
 
-homepageHeroTitle {
+heroTitle {
   padding-top: 10px;
   font-size: 20px;
   @include subText;
 }
 
-homepageHeroDetailsTitle {
+heroDetailsTitle {
   padding: 7px;
   @include bold;
   @include right;
   @include grey6;
 }
 
-homepageHeroDetails {
+heroDetails {
   padding: 7px;
   @include grey6;
 }
 
-homepageSubPanel {
+subPanel {
   @include homepagePanel;
   @include row;
   justify-content: center;
   padding: 5px;
 }
 
-homepageSubTitle {
-  @include heroText;
-  @include bold;
-}
-
-homepageBlockItem {
+blockItem {
   @include flex;
   margin: 2px;
   @include center;
   padding-top: 5px;
 }
 
-homepageBlockTime {
+blockTime {
   font-size: 13px;
   text-align: center
 }
 
-homepageBlockIcon {
+blockIcon {
   padding-top: 5px;
   padding-bottom: 15px;
   color: $hero;

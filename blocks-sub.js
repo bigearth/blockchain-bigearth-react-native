@@ -37,8 +37,8 @@ class BlocksSub extends Component {
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
             <TouchableHighlight onPress={this._handlePress.bind(this, 'boom')}>
-              <View style={[style.homepageSubPanel, styles.shadow]}>
-                <View style={[style.homepageBlockItem]}>
+              <View style={[style.subPanel, styles.shadow]}>
+                <View style={[style.blockItem]}>
                   <Text>{rowData.tx}</Text>
                   <Text>{rowData.days_destroyed}</Text>
                   <Text>{rowData.fee}</Text>

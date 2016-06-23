@@ -43,29 +43,29 @@ class HomepageSub extends Component {
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
             <TouchableHighlight onPress={this._handlePress.bind(this, rowData.nb)}>
-              <View style={[style.homepageSubPanel, styles.shadow]}>
-                <View style={[style.homepageBlockItem]}>
-                  <Text style={[style.homepageBlockIcon]}><Icon name="th-large" /></Text>
+              <View style={[style.subPanel, styles.shadow]}>
+                <View style={[style.blockItem]}>
+                  <Text style={[style.blockIcon]}><Icon name="th-large" /></Text>
                   <Text>{numeral(rowData.nb).format('0,0')}</Text>
                 </View>
-                <View style={[style.homepageBlockItem]}>
-                  <Text style={[style.homepageBlockIcon]}><Icon name="calendar" /></Text>
-                  <Text style={[style.homepageBlockTime]}>{Moment(rowData.time_utc).fromNow()}</Text>
+                <View style={[style.blockItem]}>
+                  <Text style={[style.blockIcon]}><Icon name="calendar" /></Text>
+                  <Text style={[style.blockTime]}>{Moment(rowData.time_utc).fromNow()}</Text>
                 </View>
-                <View style={[style.homepageBlockItem]}>
-                  <Text style={[style.homepageBlockIcon]}><Icon name="arrows-h" /></Text>
+                <View style={[style.blockItem]}>
+                  <Text style={[style.blockIcon]}><Icon name="arrows-h" /></Text>
                   <Text>{numeral(rowData.nb_txs).format('0,0')}</Text>
                 </View>
-                <View style={[style.homepageBlockItem]}>
-                  <Text style={[style.homepageBlockIcon]}><Icon name="btc" /></Text>
+                <View style={[style.blockItem]}>
+                  <Text style={[style.blockIcon]}><Icon name="btc" /></Text>
                   <Text>{numeral(rowData.fee).format('0.00')}</Text>
                 </View>
-                <View style={[style.homepageBlockItem]}>
-                  <Text style={[style.homepageBlockIcon]}><Icon name="calculator" /></Text>
+                <View style={[style.blockItem]}>
+                  <Text style={[style.blockIcon]}><Icon name="calculator" /></Text>
                   <Text>{numeral(rowData.size).format('0 b')}</Text>
                 </View>
-                <View style={[style.homepageBlockItem]}>
-                  <Text style={[style.homepageBlockIcon]}><Icon name="close" /></Text>
+                <View style={[style.blockItem]}>
+                  <Text style={[style.blockIcon]}><Icon name="close" /></Text>
                   <Text>{numeral(rowData.days_destroyed).format('0.0a')}</Text>
                 </View>
               </View>
