@@ -13,7 +13,7 @@ class Blocks extends Component {
   }
   _navigate(id) {
     this.props.navigator.push({
-      name: 'Transaction',
+      name: 'Transactions',
       passProps: {
         id: id
       }

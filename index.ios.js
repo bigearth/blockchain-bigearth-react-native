@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 import Homepage from './homepage.js';
 import Blocks from './blocks.js';
+import Transactions from './transactions.js';
 
 class Blockchain extends Component {
   renderScene(route, navigator) {
@@ -22,6 +23,9 @@ class Blockchain extends Component {
     }
     if(route.name == 'Blocks') {
       return <Blocks navigator={navigator} {...route.passProps} />
+    }
+    if(route.name == 'Transactions') {
+      return <Transactions navigator={navigator} {...route.passProps} />
     }
   }
   render() {

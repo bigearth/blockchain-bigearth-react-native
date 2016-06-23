@@ -14,12 +14,10 @@ class BlocksHero extends Component {
     this.state = {
       nb: 0
     };
-    console.log(this.props.id);
     fetch('https://stageblockchain.bigearth.io/blocks/' + this.props.id + '.json')
     .then((response) => response.text())
     .then((responseText) => {
       var data = JSON.parse(responseText);
-      console.log(data);
       this.setState({
         nb: numeral(data.data.nb).format('0,0'),
         time_utc: Moment(data.data.time_utc).fromNow(),
