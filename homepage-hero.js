@@ -31,7 +31,7 @@ class HomepageHero extends Component {
         current: numeral(data.data.volume.current).format('0.0a'),
         market_cap: numeral(data.data.markets.coinbase.value * data.data.volume.current).format('($ 0.00 a)'),
         difficulty: numeral(data.data.last_block.difficulty).format('0.0a'),
-        retarget_in: data.data.next_difficulty.retarget_in
+        retarget_in: numeral(data.data.next_difficulty.retarget_in).format('0,0')
       });
     })
     .catch((error) => {
