@@ -98,11 +98,26 @@ heroDetails {
   @include grey6;
 }
 
-subPanel {
+@mixin subPanel {
   @include homepagePanel;
-  @include row;
   justify-content: center;
   padding: 5px;
+}
+
+homepageSubPanel {
+  @include subPanel;
+  @include row;
+}
+
+blockSubPanel {
+  @include subPanel;
+  @include column;
+}
+
+subPanelBorder {
+  border-right-width:  1px;
+  border-right-color: #579dd8;
+  border-style: solid;
 }
 
 blockItem {

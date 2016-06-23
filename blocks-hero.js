@@ -40,7 +40,7 @@ class BlocksHero extends Component {
     	  <View style={[style.heroPanel, styles.shadow]}>
           <Text style={[style.heroTitle]}>Block</Text>
     	    <View style={[style.row]}>
-    	      <View style={[styles.subPanelBorder]}>
+    	      <View style={[style.subPanelBorder]}>
               <Text style={[style.heroDetailsTitle]}>Height</Text>
               <Text style={[style.heroDetailsTitle]}>Created</Text>
               <Text style={[style.heroDetailsTitle]}>Trades Sum</Text>
@@ -70,11 +70,6 @@ class BlocksHero extends Component {
 }
 
 const styles = StyleSheet.create({
-  subPanelBorder: {
-    borderRightWidth: 1,
-    borderRightColor: '#579dd8',
-    borderStyle: 'solid'
-  },
   shadow: {
     shadowColor: "#111",
     shadowOpacity: 0.8,

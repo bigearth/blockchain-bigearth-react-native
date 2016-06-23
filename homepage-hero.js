@@ -45,7 +45,7 @@ class HomepageHero extends Component {
           <Text style={[style.heroTitle]}>Bitcoin</Text>
           <Text style={[styles.price]}>${this.state.value}</Text>
     	    <View style={[style.row]}>
-    	      <View style={[styles.subPanelBorder]}>
+    	      <View style={[style.subPanelBorder]}>
               <Text style={[style.heroDetails]}>High {this.state.high}</Text>
     	      </View>
             <Text style={[style.heroDetails]}>{this.state.low} Low</Text>
@@ -53,7 +53,7 @@ class HomepageHero extends Component {
         </View>
     	  <View style={[style.heroPanel, styles.shadow]}>
     	    <View style={[style.row]}>
-    	      <View style={[styles.subPanelBorder]}>
+    	      <View style={[style.subPanelBorder]}>
               <Text style={[style.heroDetailsTitle]}>Market Cap</Text>
               <Text style={[style.heroDetailsTitle]}>Total BTC</Text>
               <Text style={[style.heroDetailsTitle]}>Hash Rate</Text>
@@ -77,11 +77,6 @@ const styles = StyleSheet.create({
     fontSize: 65,
     fontWeight: '500',
     color: '#444'
-  },
-  subPanelBorder: {
-    borderRightWidth: 1,
-    borderRightColor: '#579dd8',
-    borderStyle: 'solid'
   },
   shadow: {
     shadowColor: "#111",

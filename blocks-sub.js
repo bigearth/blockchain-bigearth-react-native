@@ -6,6 +6,7 @@ import {
   View,
   StyleSheet
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import BlocksSubVin from './blocks-sub-vin.js';
 import BlocksSubVout from './blocks-sub-vout.js';
 import style from './style.js'
@@ -39,15 +40,27 @@ class BlocksSub extends Component {
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
             <TouchableHighlight onPress={this._handlePress.bind(this, 'boom')}>
-              <View style={[style.subPanel, styles.shadow]}>
-                <View style={[style.blockItem]}>
-                  <Text>{rowData.tx}</Text>
-                  <Text>{rowData.days_destroyed}</Text>
-                  <Text>{rowData.fee}</Text>
-                  <Text>{rowData.vout_sum}</Text>
-                  <BlocksSubVin vins={rowData.trade.vins} />
-                  <BlocksSubVout vouts={rowData.trade.vouts} />
+              <View style={[style.blockSubPanel, styles.shadow]}>
+                <View style={[style.row]}>
+                  <View style={[style.blockItem]}>
+                    <Text style={[style.blockIcon]}><Icon name="th-large" /></Text>
+                    <Text>{rowData.tx.substring(0,12)+"..."}</Text>
+                  </View>
+                  <View style={[style.blockItem]}>
+                    <Text style={[style.blockIcon]}><Icon name="close" /></Text>
+                    <Text>{numeral(rowData.days_destroyed).format('0.0a')}</Text>
+                  </View>
+                  <View style={[style.blockItem]}>
+                    <Text style={[style.blockIcon]}><Icon name="btc" /></Text>
+                    <Text>{numeral(rowData.fee).format('0.00')}</Text>
+                  </View>
+                  <View style={[style.blockItem]}>
+                    <Text style={[style.blockIcon]}><Icon name="btc" /></Text>
+                    <Text>{numeral(rowData.vout_sum).format('0.00')}</Text>
+                  </View>
                 </View>
+                <BlocksSubVin vins={rowData.trade.vins} />
+                <BlocksSubVout vouts={rowData.trade.vouts} />
               </View>
             </TouchableHighlight>
           } />

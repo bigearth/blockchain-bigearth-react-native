@@ -43,7 +43,7 @@ class HomepageSub extends Component {
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
             <TouchableHighlight onPress={this._handlePress.bind(this, rowData.nb)}>
-              <View style={[style.subPanel, styles.shadow]}>
+              <View style={[style.homepageSubPanel, styles.shadow]}>
                 <View style={[style.blockItem]}>
                   <Text style={[style.blockIcon]}><Icon name="th-large" /></Text>
                   <Text>{numeral(rowData.nb).format('0,0')}</Text>
