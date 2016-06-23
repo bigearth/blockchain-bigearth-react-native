@@ -18,9 +18,8 @@ class BlocksSub extends Component {
     .then((response) => response.text())
     .then((responseText) => {
       var data = JSON.parse(responseText);
-      console.log(data);
       this.setState({
-        dataSource: this.state.dataSource.cloneWithRows(data.data)
+        dataSource: this.state.dataSource.cloneWithRows(data.data.txs)
       });
     })
     .catch((error) => {
@@ -32,26 +31,27 @@ class BlocksSub extends Component {
   }
 	render() {    
     return (
-      <View style={[style.subs]}>
+      <View 
+        style={[style.subs]}>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
             <TouchableHighlight onPress={this._handlePress.bind(this, rowData.nb)}>
               <View style={[style.homepageSubPanel, styles.shadow]}>
-                <Text>Foobar</Text>
+                <Text>{rowData.tx}</Text>
+                <Text>{rowData.days_destroyed}</Text>
+                <Text>{rowData.fee}</Text>
+                <Text>{rowData.vout_sum}</Text>
               </View>
             </TouchableHighlight>
           }
-          initialListSize={14}/>
+          initialListSize={14} />
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  listViewContainer: {
-    flex: 1
-  },
   sub: {
     padding: 20
   },

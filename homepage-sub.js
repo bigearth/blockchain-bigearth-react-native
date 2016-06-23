@@ -78,9 +78,6 @@ class HomepageSub extends Component {
 }
 
 const styles = StyleSheet.create({
-  listViewContainer: {
-    flex: 1
-  },
   sub: {
     padding: 20
   },
