@@ -59,8 +59,14 @@ class BlocksSub extends Component {
                     <Text>{numeral(rowData.vout_sum).format('0.00')}</Text>
                   </View>
                 </View>
-                <BlocksSubVin vins={rowData.trade.vins} />
-                <BlocksSubVout vouts={rowData.trade.vouts} />
+          	    <View style={[style.row]}>
+          	      <View style={[style.subPanelBorder]}>
+                    <BlocksSubVin vins={rowData.trade.vins} />
+          	      </View>
+          	      <View>
+                    <BlocksSubVout vouts={rowData.trade.vouts} />
+          	      </View>
+                </View>
               </View>
             </TouchableHighlight>
           } />
