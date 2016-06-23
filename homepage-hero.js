@@ -16,12 +16,8 @@ class HomepageHero extends Component {
       high: 0,
       low: 0,
       market_cap: 0,
-      all: 21000000,
       current: 0,
-      perc: 0,
       difficulty: 0,
-      next_difficulty: 0,
-      next_difficulty_perc: 0,
       retarget_in: 0
     };
     fetch('https://stageblockchain.bigearth.io/coin.json')
@@ -29,17 +25,12 @@ class HomepageHero extends Component {
     .then((responseText) => {
       var data = JSON.parse(responseText);
       this.setState({
-        data: data.data,
         value: data.data.markets.coinbase.value,
         high: numeral(data.data.markets.coinbase.daily_change.value).format('0.00 a'),
         low: numeral(data.data.markets.coinbase.daily_change.value).format('0.00 a'),
-        all: data.data.volume.all,
         current: numeral(data.data.volume.current).format('0.0a'),
-        perc: data.data.volume.perc,
         market_cap: numeral(data.data.markets.coinbase.value * data.data.volume.current).format('($ 0.00 a)'),
         difficulty: numeral(data.data.last_block.difficulty).format('0.0a'),
-        next_difficulty: data.data.next_difficulty.difficulty,
-        next_difficulty_perc: data.data.next_difficulty.perc,
         retarget_in: data.data.next_difficulty.retarget_in
       });
     })

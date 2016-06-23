@@ -13,7 +13,7 @@ class Blocks extends Component {
 	render() {    
     return (
     	<View>
-        <BlocksHero />
+        <BlocksHero id={this.props.id} />
         <BlocksSub />
       </View>
     )

@@ -14,7 +14,7 @@ class Homepage extends Component {
   }
   _navigate(id) {
     this.props.navigator.push({
-      name: 'Home',
+      name: 'Blocks',
       passProps: {
         id: id
       }
