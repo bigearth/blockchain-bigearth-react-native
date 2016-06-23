@@ -11,12 +11,23 @@ class Blocks extends Component {
   constructor(props) {
     super(props);
   }
+  _navigate(id) {
+    this.props.navigator.push({
+      name: 'Transaction',
+      passProps: {
+        id: id
+      }
+    })
+  }
+  _handlePress(id) {
+    this._navigate(id);
+  }
 	render() {    
     return (
     	<View 
         style={style.container}>
         <BlocksHero id={this.props.id} />
-        <BlocksSub id={this.props.id} />
+        <BlocksSub onPress={this._handlePress.bind(this)} id={this.props.id} />
       </View>
     )
   }

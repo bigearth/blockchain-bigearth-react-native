@@ -30,7 +30,7 @@ class BlocksSub extends Component {
     });
   }
   _handlePress(data) {
-    console.log('data', data);
+    this.props.onPress(data);
   }
 	render() {    
     return (
@@ -39,7 +39,7 @@ class BlocksSub extends Component {
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(rowData) => 
-            <TouchableHighlight onPress={this._handlePress.bind(this, 'boom')}>
+            <TouchableHighlight onPress={this._handlePress.bind(this, rowData.tx)}>
               <View style={[style.blockSubPanel, styles.shadow]}>
                 <View style={[style.row]}>
                   <View style={[style.blockItem]}>
