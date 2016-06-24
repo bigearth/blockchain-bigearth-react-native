@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 import {
   Text,
@@ -9,10 +10,14 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 import BlocksSubVin from './blocks-sub-vin.js';
 import BlocksSubVout from './blocks-sub-vout.js';
+import Numeral from 'numeral'
 import style from './style.js'
 
 class BlocksSub extends Component {
-  constructor(props) {
+  state: {
+    dataSource: Object;
+  };
+  constructor(props: any) {
     super(props);
     this.state = {
       dataSource: new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
@@ -29,7 +34,7 @@ class BlocksSub extends Component {
       console.warn(error);
     });
   }
-  _handlePress(data) {
+  _handlePress(data: string) {
     this.props.onPress(data);
   }
 	render() {    
@@ -48,24 +53,23 @@ class BlocksSub extends Component {
                   </View>
                   <View style={[style.blockItem]}>
                     <Text style={[style.blockIcon]}><Icon name="close" /></Text>
-                    <Text>{numeral(rowData.days_destroyed).format('0.0a')}</Text>
+                    <Text>{Numeral(rowData.days_destroyed).format('0.0a')}</Text>
                   </View>
                   <View style={[style.blockItem]}>
                     <Text style={[style.blockIcon]}><Icon name="btc" /></Text>
-                    <Text>{numeral(rowData.fee).format('0.00')}</Text>
+                    <Text>{Numeral(rowData.fee).format('0.00')}</Text>
                   </View>
                   <View style={[style.blockItem]}>
-                    <Text style={[style.blockIcon]}><Icon name="btc" /></Text>
-                    <Text>{numeral(rowData.vout_sum).format('0.00')}</Text>
+                    <Text style={[style.blockIcon]}><Icon name="arrows-h" /></Text>
+              	    <View style={[style.row]}>
+                      <View style={[style.subPanelBorder]}>
+                        <Text style={[style.heroDetailsTitle, style.red]}>{rowData.trade.vins.length} <Icon name="arrow-right" /></Text>
+                      </View>
+                      <View>
+                        <Text style={[style.heroDetails, style.green]}><Icon name="arrow-left" /> {rowData.trade.vouts.length}</Text>
+                      </View>
+                    </View>
                   </View>
-                </View>
-          	    <View style={[style.row]}>
-          	      <View style={[style.subPanelBorder]}>
-                    <BlocksSubVin vins={rowData.trade.vins} />
-          	      </View>
-          	      <View>
-                    <BlocksSubVout vouts={rowData.trade.vouts} />
-          	      </View>
                 </View>
               </View>
             </TouchableHighlight>
