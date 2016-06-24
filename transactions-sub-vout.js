@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import {
   Text,
   ListView,
+  StyleSheet,
   View
 } from 'react-native';
+import Numeral from 'numeral'
 import style from './style.js'
 
-class TransactionsSubVouts extends Component {
+class TransactionsSubVout extends Component {
   constructor(props) {
     super(props);
   }
@@ -18,8 +20,15 @@ class TransactionsSubVouts extends Component {
           dataSource={dataSource.cloneWithRows(this.props.vouts)}
           enableEmptySections={true}
           renderRow={(rowData) => 
-            <View style={[style.subPanel]}>
-              <Text style={[style.heroDetailsTitle]}>Vouts</Text>
+            <View style={[style.blockSubPanel, styles.shadow]}>
+              <View style={[style.row]}>
+        	      <View style={[style.subPanelBorder]}>
+                  <Text style={[style.heroDetails, style.green]}>{rowData.amount}</Text>
+        	      </View>
+        	      <View>
+                  <Text style={[style.heroDetailsTitle]}>{rowData.address.substring(0,20)+"..."}</Text>
+        	      </View>
+              </View>
             </View>
           } />
       </View>
@@ -27,4 +36,16 @@ class TransactionsSubVouts extends Component {
   }
 }
 
-export default TransactionsSubVouts;
+const styles = StyleSheet.create({
+  shadow: {
+    shadowColor: "#111",
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 1,
+      width: 0
+    }
+  }
+});
+
+export default TransactionsSubVout;

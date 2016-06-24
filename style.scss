@@ -40,6 +40,14 @@ $sub: #579dd8;
   margin-bottom: 5px;
 }
 
+@mixin red {
+  color: red;
+}
+
+@mixin green {
+  color: green;
+}
+
 @mixin grey6 {
   color: #666;
 }
@@ -136,4 +144,12 @@ blockIcon {
   padding-top: 5px;
   padding-bottom: 15px;
   color: $hero;
+}
+
+red {
+  @include red;
+}
+
+green {
+  @include green;
 }

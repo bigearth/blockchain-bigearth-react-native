@@ -21,8 +21,12 @@ class TransactionsSub extends Component {
     return (
       <View 
         style={[style.subs]}>
-        <TransactionsSubVin vins={this.props.vins} />
-        <TransactionsSubVout vouts={this.props.vouts} />
+        <View>
+          <TransactionsSubVin vins={this.props.vins} />
+        </View>
+        <View>
+          <TransactionsSubVout vouts={this.props.vouts} />
+        </View>
       </View>
     )
   }
